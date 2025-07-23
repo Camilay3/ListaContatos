@@ -163,3 +163,10 @@ input:focus {
   color: red;
   margin-bottom: 12px;
 }
+
+header .cabecalho-link button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+}

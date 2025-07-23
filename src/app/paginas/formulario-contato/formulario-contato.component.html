@@ -2,6 +2,13 @@
     <header>
         <section class="cabecalho-link">
             <img src="/assets/logo.png">
+
+            <div>
+                <button>
+                    <img class="seta" src="assets/arrow-left.png" alt="">
+                    <a routerLink="/lista-contatos">Voltar</a>
+                </button>
+            </div>
         </section>
 
         <section class="cabecalho-contato">
@@ -15,21 +22,21 @@
         <input formControlName="nome" type="text" id="nome" placeholder="Digite o nome do contato">
 
         @if(contatoForm.get('nome')?.errors && contatoForm.get('nome')?.touched) {
-            <div class="mensagem-erro">Campo obrigatóio</div>
+        <div class="mensagem-erro">Campo obrigatóio</div>
         }
 
         <label for="telefone">Telefone</label>
         <input formControlName="telefone" type="text" id="telefone" placeholder="Digite o telefone do contato">
 
         @if(contatoForm.get('telefone')?.errors && contatoForm.get('telefone')?.touched) {
-            <div class="mensagem-erro">Campo obrigatóio</div>
+        <div class="mensagem-erro">Campo obrigatóio</div>
         }
 
         <label for="email">Email</label>
         <input formControlName="email" type="email" id="email" placeholder="Digite o email do contato">
 
         @if(contatoForm.get('email')?.errors?.['email'] && contatoForm.get('email')?.touched) {
-            <div class="mensagem-erro">Formato de email inválido</div>
+        <div class="mensagem-erro">Formato de email inválido</div>
         }
 
         <app-separador></app-separador>
@@ -43,11 +50,14 @@
             <input formControlName="redes" type="url" id="redes" placeholder="Adicione a URL da página">
         </div>
 
-        <textarea style="resize: none" formControlName="observacoes" type="text" id="observacoes" placeholder="Coloque observações nesse campo"></textarea>
+        <textarea style="resize: none" formControlName="observacoes" type="text" id="observacoes"
+            placeholder="Coloque observações nesse campo"></textarea>
 
         <section class="botoes">
             <button (click)="cancelar()" class="botao-cancelar" type="button">Cancelar</button>
-            <button [disabled]="contatoForm.invalid"[ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'" type="submit">Salvar contato</button>
+            <button [disabled]="contatoForm.invalid"
+                [ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'" type="submit">Salvar
+                contato</button>
         </section>
     </form>
 
