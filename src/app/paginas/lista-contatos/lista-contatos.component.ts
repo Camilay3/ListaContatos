@@ -9,12 +9,7 @@ import { FormularioContatoComponent } from '../formulario-contato/formulario-con
 
 import { RouterLink } from '@angular/router';
 import { ContatoService } from '../../services/contato.service';
-
-interface Contato {
-  id: number
-  nome: string
-  telefone: string
-}
+import { Contato } from '../../Componentes/contato/contato';
 
 @Component({
   selector: 'app-lista-contatos',
