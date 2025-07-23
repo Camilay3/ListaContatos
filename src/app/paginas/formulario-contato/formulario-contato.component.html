@@ -39,7 +39,7 @@
 
         <label for="redes">Redes sociais</label>
         <div class="input-container">
-            <span class="http">http://</span>
+            <span class="span-http">http://</span>
             <input formControlName="redes" type="url" id="redes" placeholder="Adicione a URL da página">
         </div>
 
@@ -47,7 +47,7 @@
 
         <section class="botoes">
             <button (click)="cancelar()" class="botao-cancelar" type="button">Cancelar</button>
-            <button class="botao-salvar" type="submit">Salvar contato</button>
+            <button [disabled]="contatoForm.invalid"[ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'" type="submit">Salvar contato</button>
         </section>
     </form>
 
